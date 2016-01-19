@@ -13,13 +13,27 @@ $(document).ready(function() {
 
     $(".year").text(year);
 
-    if (!result) {                 // same as writing if (result === false)
+    if (isNaN(year)) {
+      $("#invalid").show();
+      $("#result").hide();
+    }
+    else if (!result) {                 // same as writing if (result === false)
       $(".not").text("not");
+      $("#result").show();
+      $("#invalid").hide();
     } else {
       $(".not").text("");
+      $("#result").show();
+      $("#invalid").hide();
     }
 
-    $("#result").show();
+    // if (result === NaN) {
+    //   $("#invalid").show();
+    //   $("#results").hide();
+    // } else {
+    //
+    // }
+
     event.preventDefault();
   });
 });
